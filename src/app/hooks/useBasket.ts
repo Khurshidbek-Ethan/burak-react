@@ -47,7 +47,7 @@ const useBasket = () => {
 
   const onDelete = (input: CartItem) => {
     const cartUpdate = cartItems.filter(
-      (item: CartItem) => item._id == input._id
+      (item: CartItem) => item._id !== input._id
     );
     setCartItems(cartUpdate);
     localStorage.setItem("cartData", JSON.stringify(cartUpdate));
